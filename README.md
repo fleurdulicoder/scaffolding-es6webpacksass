@@ -50,12 +50,31 @@ Webpack 4:
 "webpack-cli": "^3.0.8",
 "webpack-dev-server": "^3.1.4"
 
-ToDo: Add hot loading & code splitting - dynamic imports!
-https://webpack.js.org/guides/code-splitting/
-
 StyleGuides & Best Practices:
 -------------------------------------------------------------------------------
 AirBNB Best practices for SASS/CSS and ECMA2015 are used.
 
 + .scss-lint.yml
 + .eslintrc   ("extends": "airbnb-base")
+
+
+Technologies:
+-------------------------------------------------------------------------------
+Sass, CSS, HTML5, Ecma2015 (ES6) Modular Programming
+
+
+Todos:
+-------------------------------------------------------------------------------
+JavaScript Code Splitting:
+- Add hot loading & code splitting - dynamic imports!
+  https://webpack.js.org/guides/code-splitting/
+
+SASS Processing:
+- Combine css & css
+- Add prefixes
+- Process into one file
+- Minimize
+
+Images Processing:
+- Optimize
+- Copy over to distribution package
