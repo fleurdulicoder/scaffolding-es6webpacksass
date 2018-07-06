@@ -4,6 +4,9 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { ImageminWebpackPlugin } = require('imagemin-webpack');
+const ImageMinGifsicle = require('imagemin-gifsicle');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   module: {
@@ -33,6 +36,14 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -44,6 +55,18 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
+    new ImageminWebpackPlugin({
+      imageminOptions: {
+        bail: false,
+        plugins: ImageMinGifsicle({
+          interlaced: true,
+          optimizationLevel: 5,
+        }),
+      },
+    }),
+    new CopyWebpackPlugin([
+      { from: './img/**/*.{jpg,jpeg,png,gif}', to: '' },
+    ]),
   ],
   optimization: {
     minimizer: [
