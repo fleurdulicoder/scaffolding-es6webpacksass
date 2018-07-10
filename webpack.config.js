@@ -1,3 +1,5 @@
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ImageminWebpackPlugin } = require('imagemin-webpack');
@@ -37,7 +39,9 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+            loader: process.env.NODE_ENV !== 'production'
+              ? 'style-loader'
+              : MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -56,6 +60,19 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(['dev', 'prod'], {
+      root: path.join(__dirname, '/dist'),
+      exclude: ['.gitkeep'],
+      verbose: true,
+      dry: false,
+      beforeEmit: true,
+    }),
+    new CleanWebpackPlugin(['build'], {
+      root: path.join(__dirname, ''),
+      verbose: true,
+      dry: false,
+      exclude: [],
+    }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',

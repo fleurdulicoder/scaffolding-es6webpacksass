@@ -11,6 +11,7 @@
     "babel-eslint": "^8.2.5",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
     "cssnano": "^4.0.0",
@@ -39,8 +40,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -d --watch",
     "start": "webpack-dev-server --mode development --open --content-base dist/dev",
-    "build": "webpack --mode development ./src/index.js --output ./dist/dev/main.js",
-    "package": "webpack --mode production ./src/index.js --output ./dist/prod/main.js",
+    "build": "webpack --mode development ./src/index.js --output ./dist/dev/index.js",
+    "package": "webpack --mode production ./src/index.js --output ./dist/prod/index.js",
     "lint": "eslint **/*.js",
     "lint-fix": "eslint --fix **/*.js"
   },
