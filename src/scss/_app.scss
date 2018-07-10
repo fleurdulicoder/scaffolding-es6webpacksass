@@ -1,18 +1,24 @@
-@import 'scss/typography';
-@import 'scss/variables';
-
 body {
   background-color: $bg-color;
   color: $font-color;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.4em;
+  margin: 0;
+  padding: 0;
 }
 
 .app {
   background: $light-grey-color;
+  box-sizing: border-box;
   color: $font-color;
   height: 100vh;
+  line-height: 1.4em;
+  padding: 2em;
   position: relative;
   width: 100%;
+}
+
+h1 {
+  line-height: 1em;
 }
