@@ -6,7 +6,6 @@ const { ImageminWebpackPlugin } = require('imagemin-webpack');
 const ImageMinGifsicle = require('imagemin-gifsicle');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   module: {
@@ -16,7 +15,7 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            // options: { minimize: true },
+            options: { minimize: true },
           },
         ],
       },
@@ -39,9 +38,10 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: process.env.NODE_ENV !== 'production'
-              ? 'style-loader'
-              : MiniCssExtractPlugin.loader,
+            // loader: process.env.NODE_ENV !== 'production'
+            // ? 'style-loader'
+            // : MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -67,12 +67,6 @@ module.exports = {
       dry: false,
       beforeEmit: true,
     }),
-    new CleanWebpackPlugin(['build'], {
-      root: path.join(__dirname, ''),
-      verbose: true,
-      dry: false,
-      exclude: [],
-    }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
@@ -90,8 +84,8 @@ module.exports = {
       { from: './img/**/*.{jpg,jpeg,png,gif}', to: '' },
     ]),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: 'css/[name].css',
+      chunkFilename: 'css/[id].css',
     }),
   ],
   optimization: {
@@ -101,7 +95,6 @@ module.exports = {
         parallel: true,
         sourceMap: true,
       }),
-      new OptimizeCSSAssetsPlugin({}),
     ],
   },
 };
