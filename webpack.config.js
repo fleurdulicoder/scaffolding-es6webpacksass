@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ImageminWebpackPlugin } = require('imagemin-webpack');
 const ImageMinGifsicle = require('imagemin-gifsicle');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -68,13 +68,13 @@ module.exports = {
     ],
   },
   plugins: [
-    // new CleanWebpackPlugin(['css', 'js', 'img'], {
-    //   root: path.join(__dirname, '/dist'),
-    //   exclude: ['.gitkeep'],
-    //   verbose: true,
-    //   dry: false,
-    //   beforeEmit: true,
-    // }),
+    new CleanWebpackPlugin(['*'], {
+      root: path.join(__dirname, '/dist'),
+      exclude: ['.gitkeep'],
+      verbose: true,
+      dry: false,
+      beforeEmit: true,
+    }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
     }),
@@ -103,5 +103,5 @@ module.exports = {
   //       sourceMap: true,
   //     }),
   //   ],
-  // },
+  },
 };
