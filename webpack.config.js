@@ -1,13 +1,19 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ImageminWebpackPlugin } = require('imagemin-webpack');
 const ImageMinGifsicle = require('imagemin-gifsicle');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  entry: './src/js/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist/'),
+    filename: 'js/main.js',
+    publicPath: '/dist',
+  },
   module: {
     rules: [
       {
@@ -15,7 +21,7 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true },
+            // options: { minimize: true },
           },
         ],
       },
@@ -31,6 +37,11 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img/',
+              publicPath: 'img/',
+            },
           },
         ],
       },
@@ -38,9 +49,6 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            // loader: process.env.NODE_ENV !== 'production'
-            // ? 'style-loader'
-            // : MiniCssExtractPlugin.loader,
             loader: MiniCssExtractPlugin.loader,
           },
           {
@@ -60,16 +68,15 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dev', 'prod'], {
-      root: path.join(__dirname, '/dist'),
-      exclude: ['.gitkeep'],
-      verbose: true,
-      dry: false,
-      beforeEmit: true,
-    }),
+    // new CleanWebpackPlugin(['css', 'js', 'img'], {
+    //   root: path.join(__dirname, '/dist'),
+    //   exclude: ['.gitkeep'],
+    //   verbose: true,
+    //   dry: false,
+    //   beforeEmit: true,
+    // }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html',
     }),
     new ImageminWebpackPlugin({
       imageminOptions: {
@@ -88,13 +95,13 @@ module.exports = {
       chunkFilename: 'css/[id].css',
     }),
   ],
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true,
-      }),
-    ],
-  },
+  // optimization: {
+  //   minimizer: [
+  //     new UglifyJsPlugin({
+  //       cache: true,
+  //       parallel: true,
+  //       sourceMap: true,
+  //     }),
+  //   ],
+  // },
 };

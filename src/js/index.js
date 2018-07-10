@@ -1,5 +1,5 @@
-import { sum } from './js/util';
-import './scss/index.scss';
+import { sum } from 'util';
+import '../scss/index.scss';
 
 const arr = [1, 2, 3];
 const es6 = () => console.log(...arr);

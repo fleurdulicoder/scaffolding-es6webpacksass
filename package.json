@@ -37,9 +37,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -d --watch",
-    "start": "webpack-dev-server --mode development --open --content-base dist/dev",
-    "build": "webpack --mode development ./src/index.js --output ./dist/dev/main.js",
-    "package": "webpack --mode production ./src/index.js --output ./dist/prod/main.js",
+    "start": "webpack-dev-server --mode production --open --content-base dist/",
+    "build": "webpack --mode production",
     "lint": "eslint **/*.js",
     "lint-fix": "eslint --fix **/*.js"
   },
