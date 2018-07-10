@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ImageminWebpackPlugin } = require('imagemin-webpack');
 const ImageMinGifsicle = require('imagemin-gifsicle');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/js/index.js',
@@ -95,13 +94,4 @@ module.exports = {
       chunkFilename: 'css/[id].css',
     }),
   ],
-  // optimization: {
-  //   minimizer: [
-  //     new UglifyJsPlugin({
-  //       cache: true,
-  //       parallel: true,
-  //       sourceMap: true,
-  //     }),
-  //   ],
-  // },
 };
