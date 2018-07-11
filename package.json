@@ -29,7 +29,6 @@
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
     "sass-loader": "^7.0.3",
-    "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.8.3",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
@@ -37,9 +36,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -d --watch",
-    "start": "webpack-dev-server --mode development --open --content-base dist/dev",
-    "build": "webpack --mode development ./src/index.js --output ./dist/dev/main.js",
-    "package": "webpack --mode production ./src/index.js --output ./dist/prod/main.js",
+    "start": "webpack-dev-server --mode production --open --content-base dist/",
+    "build": "webpack --mode production",
     "lint": "eslint **/*.js",
     "lint-fix": "eslint --fix **/*.js"
   },

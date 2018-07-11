@@ -32,6 +32,7 @@ Webpack 4:
 "babel-eslint": "^8.2.5",
 "babel-loader": "^7.1.5",
 "babel-preset-env": "^1.7.0",
+"clean-webpack-plugin": "^0.1.19",
 "copy-webpack-plugin": "^4.5.2",
 "css-loader": "^0.28.11",
 "cssnano": "^4.0.0",
@@ -45,13 +46,10 @@ Webpack 4:
 "imagemin-webpack": "^3.0.0",
 "mini-css-extract-plugin": "^0.4.1",
 "node-sass": "^4.9.2",
-"optimize-css-assets-webpack-plugin": "^4.0.3",
 "postcss-cssnext": "^3.1.0",
 "postcss-import": "^11.1.0",
 "postcss-loader": "^2.1.5",
 "sass-loader": "^7.0.3",
-"style-loader": "^0.21.0",
-"uglifyjs-webpack-plugin": "^1.2.7",
 "webpack": "^4.8.3",
 "webpack-cli": "^3.0.8",
 "webpack-dev-server": "^3.1.4"
@@ -61,13 +59,21 @@ Style Guides & Best Practices:
 AirBNB Best practices for SASS/CSS and ECMA2015 are used.
 
 + .scss-lint.yml (https://github.com/airbnb/css)
-+ .eslintrc   ("extends": "airbnb-base")
++ .eslintrc   (https://www.npmjs.com/package/eslint-config-airbnb-base)
 
 
 Technologies:
 -------------------------------------------------------------------------------
 Sass, CSS, HTML5, Ecma2015 (ES6) Modular Programming
 
+
+Application Installation:
+-------------------------------------------------------------------------------
+1. Make sure you have node, npm installed (and maybe a few other packages)
+2. Run "npm install"
+3. Run "npm run build"
+4. Do "npm start"
+5. Review what was build in dist/ etc.
 
 Todos:
 -------------------------------------------------------------------------------
