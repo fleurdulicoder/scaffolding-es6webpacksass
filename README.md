@@ -1,4 +1,4 @@
-Start Kit: Webpack 4, Sass, HTML5, ES6
+Starter Kit: Webpack 4, Sass, HTML5, ES6
 -------------------------------------------------------------------------------
 This is an empty package with the set up to do common tasks for development of
 web sites in non-React environment, yet with ES6. You can improve it by forking
@@ -6,7 +6,7 @@ it or sending me a request to add more to this bare package.
 
 Application Installation:
 -------------------------------------------------------------------------------
-1. Make sure you have node, npm installed (and maybe a few other packages)
+1. Make sure you have node & npm installed (+yarn)
 2. Run "npm install"
 3. Run "npm run build"
 4. Do "npm start"
@@ -14,7 +14,7 @@ Application Installation:
 
 Technologies:
 -------------------------------------------------------------------------------
-Sass, CSS, HTML5, Ecma2015 (ES6) Modular Programming
+Sass, CSS, HTML5, Ecma2015 (ES6) Modular JavaScript Programming
 
 Suggested IDE: Atom
 -------------------------------------------------------------------------------
