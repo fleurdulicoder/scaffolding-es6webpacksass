@@ -59,13 +59,21 @@ Style Guides & Best Practices:
 AirBNB Best practices for SASS/CSS and ECMA2015 are used.
 
 + .scss-lint.yml (https://github.com/airbnb/css)
-+ .eslintrc   ("extends": "airbnb-base")
++ .eslintrc   (https://www.npmjs.com/package/eslint-config-airbnb-base)
 
 
 Technologies:
 -------------------------------------------------------------------------------
 Sass, CSS, HTML5, Ecma2015 (ES6) Modular Programming
 
+
+Application Installation:
+-------------------------------------------------------------------------------
+1. Make sure you have node, npm installed (and maybe a few other packages)
+2. Run "npm install"
+3. Run "npm run build"
+4. Do "npm start"
+5. Review what was build in dist/ etc.
 
 Todos:
 -------------------------------------------------------------------------------
