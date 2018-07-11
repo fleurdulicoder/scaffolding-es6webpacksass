@@ -1,10 +1,10 @@
-##Start Kit: Webpack 4, Sass, HTML5, ES6
+Start Kit: Webpack 4, Sass, HTML5, ES6
 -------------------------------------------------------------------------------
 This is an empty package with the set up to do common tasks for development of
 web sites in non-React environment, yet with ES6. You can improve it by forking
 it or sending me a request to add more to this bare package.  
 
-##Application Installation:
+Application Installation:
 -------------------------------------------------------------------------------
 1. Make sure you have node, npm installed (and maybe a few other packages)
 2. Run "npm install"
@@ -12,11 +12,11 @@ it or sending me a request to add more to this bare package.
 4. Do "npm start"
 5. Review what was build in dist/ etc.
 
-##Technologies:
+Technologies:
 -------------------------------------------------------------------------------
 Sass, CSS, HTML5, Ecma2015 (ES6) Modular Programming
 
-##Suggested IDE: Atom
+Suggested IDE: Atom
 -------------------------------------------------------------------------------
 Download ATOM for Mac or Windows. Install the following packages:
 
@@ -34,7 +34,7 @@ Download ATOM for Mac or Windows. Install the following packages:
 + linter-ui-default
 + pigments
 
-##Settings for atom-beautify:
+Settings for atom-beautify:
 ---------------------------
 + Beautify entire file on save
 
@@ -43,7 +43,7 @@ Settings for linter-scss-lint:
 + A .scss-lint.yml to use fallback...:  .scss-lint.yml
 + Disable when no scss-lint.yml found
 
-##Webpack 4:
+Webpack 4:
 -------------------------------------------------------------------------------
 
 "babel-core": "^6.26.3",
@@ -72,14 +72,14 @@ Settings for linter-scss-lint:
 "webpack-cli": "^3.0.8",
 "webpack-dev-server": "^3.1.4"
 
-##Style Guides & Best Practices:
+Style Guides & Best Practices:
 -------------------------------------------------------------------------------
 AirBNB Best practices for SASS/CSS and ECMA2015 are used.
 
 + .scss-lint.yml (https://github.com/airbnb/css)
 + .eslintrc   (https://www.npmjs.com/package/eslint-config-airbnb-base)
 
-##Todos:
+Todos:
 -------------------------------------------------------------------------------
 JavaScript Code Splitting:
 - Add hot loading & code splitting - dynamic imports!
