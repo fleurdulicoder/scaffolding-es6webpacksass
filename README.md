@@ -79,8 +79,19 @@ AirBNB Best practices for SASS/CSS and ECMA2015 are used.
 + .scss-lint.yml (https://github.com/airbnb/css)
 + .eslintrc   (https://www.npmjs.com/package/eslint-config-airbnb-base)
 
+Package Features:
+-------------------------------------------------------------------------------
+1. Removal of the previous bundle /dist on "npm run build"
+2. FontAwesome loading into /dist/fonts
+3. SASS loading, interpreting & minifying into /dist/css
+4. HTML loading, option to minify  /dist/index.html
+5. Referenced in JS|HTML|CSS Images loading to /dist/img
+6. JavaScript transpiling, bundling & minifying /dist/js/main.min.js
+7. To preview bundle in the browser, run "npm start"
+
 Todos:
 -------------------------------------------------------------------------------
 JavaScript Code Splitting:
-- Add hot loading & code splitting - dynamic imports!
+- .scss images as backgrounds are not loading yet, a bug
+- add hot loading & code splitting - dynamic imports!
   https://webpack.js.org/guides/code-splitting/
