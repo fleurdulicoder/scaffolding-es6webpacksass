@@ -4,14 +4,13 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ImageminWebpackPlugin } = require('imagemin-webpack');
 const ImageMinGifsicle = require('imagemin-gifsicle');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist/'),
     filename: 'js/main.js',
-    publicPath: '/dist',
   },
   module: {
     rules: [
@@ -77,13 +76,13 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['*'], {
-      root: path.join(__dirname, '/dist'),
-      exclude: ['.gitkeep'],
-      verbose: true,
-      dry: false,
-      beforeEmit: true,
-    }),
+    // new CleanWebpackPlugin(['*'], {
+    //   root: path.join(__dirname, '/dist'),
+    //   exclude: ['.gitkeep'],
+    //   verbose: true,
+    //   dry: false,
+    //   beforeEmit: true,
+    // }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
     }),
