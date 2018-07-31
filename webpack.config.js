@@ -35,11 +35,16 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'img/',
-              publicPath: 'img/',
-            },
+            options: { name: 'img/[name].[ext]' },
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: 'fonts/[name].[ext]' },
           },
         ],
       },
@@ -48,6 +53,7 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
+            options: { sourceMap: true, publicPath: '../' },
           },
           {
             loader: 'css-loader',
@@ -62,16 +68,6 @@ module.exports = {
             options: { sourceMap: true },
           },
         ],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/',
-          },
-        }],
       },
     ],
   },
