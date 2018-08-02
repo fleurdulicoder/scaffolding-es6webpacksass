@@ -1,4 +1,4 @@
-@import 'mixins';
+@import "mixins";
 
 body {
   background-color: $bg-color;
@@ -32,7 +32,7 @@ h1 {
   height: 200px;
   min-height: 200px;
   text-align: center;
-  background-image: url('../img/iStock-91133060.jpg');
+  background-image: url("../img/iStock-91133060.jpg");
   background-position: center, center;
   background-repeat: no-repeat;
   background-size: cover;
