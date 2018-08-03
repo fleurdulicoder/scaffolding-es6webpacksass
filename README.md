@@ -2,7 +2,34 @@ Starter Kit: Webpack 4, Sass, HTML5, ES6
 -------------------------------------------------------------------------------
 This is an empty package with the set up to do common tasks for development of
 web sites in non-React environment, yet with ES6. You can improve it by forking
-it or sending me a request to add more to this bare package.  
+it or sending me a request to add more to this bare package.
+
+Prerequisites:
+-------------------------------------------------------------------------------
+1. Node must be installed globally
+2. NPM must be installed globally (and/or Yarn)
+
+Good to have:
+-------------------------------------------------------------------------------
+Install NVM for node version management. The instructions are here:
+https://github.com/creationix/nvm#install-script.
+
+Steps:
+
+1. Make sure you have ~/.bash_profile (or .profile, or .bashrc). If not, create:
+$ touch ~/.bash_profile
+
+2. Load the NVM binaries:
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+3. Set up node version for your project as default
+$ nvm install 8.11.3
+$ nvm use 8.11.3
+$ nvm current
+8.11.3
+
+4. If you have a new project in future that requires a different version of node,
+you can simply switch to a different version just by asking NVM to use that version.
 
 Application Installation:
 -------------------------------------------------------------------------------
@@ -11,6 +38,11 @@ Application Installation:
 3. Run "npm run build"
 4. Do "npm start"
 5. Review what was build in dist/ etc.
+
+Node Version Manager
+-------------------------------------------------------------------------------
+1. Package node version is locked, so that we can safely program
+2. Package node lock is in .nvmrc file
 
 Technologies:
 -------------------------------------------------------------------------------
