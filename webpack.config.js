@@ -74,7 +74,6 @@ module.exports = {
   plugins: [
     // new CleanWebpackPlugin(['*'], {
     //   root: path.join(__dirname, '/dist'),
-    //   exclude: ['.gitkeep'],
     //   verbose: true,
     //   dry: false,
     //   beforeEmit: true,

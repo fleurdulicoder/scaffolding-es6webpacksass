@@ -22,7 +22,7 @@ $ touch ~/.bash_profile
 2. Load the NVM binaries:
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-3. Set up node version for your project as default
+3. Set up a node version for your project:
 $ nvm install 8.11.3
 $ nvm use 8.11.3
 $ nvm current
